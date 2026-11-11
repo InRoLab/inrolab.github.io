@@ -1,0 +1,104 @@
+/*
+  JEDNODUCHE UPRAVY VZHLADU
+  ------------------------
+  Tento subor sa nacitava PO style.css a prepise jeho zvolene pravidla.
+  Tu mozes menit farby, rozmery aj styl bez zasahu do rozsiahleho style.css.
+*/
+
+:root {
+  --paper: #f7f8f4;        /* svetle pozadie */
+  --ink: #19332b;          /* tmavy text */
+  --ink-deep: #102c25;     /* tmave tlacidla */
+  --acid: #d0ed98;         /* akcent */
+}
+
+/* PRIKLAD - odkomentuj pre zmenu vysky mozaiky na hlavnej stranke:
+.hero-gallery { height: 590px; }
+*/
+
+/* PRIKLAD - odkomentuj pre upravu velkosti vlastneho loga:
+.custom-hero-logo { max-width: 570px; max-height: 240px; }
+*/
+.hero {
+    background: #06232C;
+}
+
+.nav-logo {
+    width: 140px;
+    height: 65px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Velke logo na hlavnej stranke */
+.custom-hero-logo {
+    display: block;
+    width: 100%;
+    max-width: 570px;
+    height: auto;
+    object-fit: contain;
+}
+
+.hero-lead,
+.hero-secondary {
+    text-align: justify;
+    hyphens: auto;
+}
+
+/* Mriezka na pozadi uvodnej stranky */
+.hero::before {
+    background-size: 220px 120px;
+}
+
+/* Rovnaka farba pozadia ako na uvodnej stranke */
+.subpage-banner {
+    background: #06232C;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Mriezka ako na uvodnej stranke */
+.subpage-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 100px 100px;
+    pointer-events: none;
+}
+
+/* Text a ostatne prvky zostanu nad mriezkou */
+.subpage-banner-inner {
+    position: relative;
+    z-index: 1;
+}
+
+/* ========================================
+   JEDNOTNE NADPISY VSETKYCH PODSTRANOK
+   ======================================== */
+
+/* Desktop */
+@media (min-width: 900px) {
+    .subpage-banner .subpage-statement {
+        font-size: 40px;
+        font-weight: 600;
+        line-height: 1.2;
+        max-width: none;
+        width: max-content;
+        white-space: nowrap;
+    }
+}
+
+/* Tablet a mobil */
+@media (max-width: 899px) {
+    .subpage-banner .subpage-statement {
+        font-size: clamp(28px, 4vw, 38px);
+        font-weight: 600;
+        line-height: 1.2;
+        width: auto;
+        max-width: 100%;
+        white-space: normal;
+    }
+}

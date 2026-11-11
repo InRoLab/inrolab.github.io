@@ -1,0 +1,388 @@
+
+/* ==========================================
+   EQUIPMENT PAGE
+   INTERACTION ROBOTICS LAB
+   ========================================== */
+
+
+/* ==========================================
+   1. HLAVNA OBSAHOVA CAST
+   ========================================== */
+
+.equipment-page {
+    padding: 70px 0 110px;
+    background: var(--paper, #f7f8f4);
+    color: var(--ink, #19332b);
+}
+
+
+/* ==========================================
+   2. HLAVNY NADPIS - RESEARCH EQUIPMENT
+   ========================================== */
+
+.equipment-main-title {
+    display: block;
+    width: 100%;
+
+    margin: 0 0 46px;
+    padding-bottom: 16px;
+
+    border-bottom: 1px solid rgba(25, 51, 43, 0.18);
+
+    font-size: clamp(24px, 2.5vw, 34px);
+    font-weight: 650;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+
+    color: var(--ink, #19332b);
+}
+
+
+/* ==========================================
+   3. KATEGORIE ZARIADENI
+   ========================================== */
+
+.equipment-group {
+    margin: 0 0 60px;
+}
+
+.equipment-group:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Nadpis kategorie */
+
+.equipment-group-title {
+    display: block;
+    width: 100%;
+
+    margin: 0 0 30px;
+    padding-bottom: 14px;
+
+    border-bottom: 1px solid rgba(25, 51, 43, 0.18);
+
+    font-size: clamp(20px, 2vw, 24px);
+    font-weight: 650;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+
+    color: var(--ink, #19332b);
+}
+
+
+/* ==========================================
+   4. DVOJSTLPCOVE USPORIADANIE
+   ========================================== */
+
+.equipment-page .equipment-items {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    column-gap: 45px;
+    row-gap: 42px;
+
+    align-items: start;
+
+    width: 100%;
+}
+
+
+/* ==========================================
+   5. JEDNOTLIVE ZARIADENIE
+   ========================================== */
+
+.equipment-page .equipment-item {
+    display: grid;
+
+    grid-template-columns: 135px minmax(0, 1fr);
+
+    gap: 20px;
+    align-items: start;
+
+    width: 100%;
+    min-width: 0;
+
+    margin: 0;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+
+/* ==========================================
+   6. FOTOGRAFIE ZARIADENI
+   ========================================== */
+
+.equipment-page .equipment-photo {
+    width: 135px;
+    height: 145px;
+
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Samotny obrazok */
+
+.equipment-page .equipment-photo img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: 100%;
+    max-height: 100%;
+
+    /* Cely obrazok bez orezania */
+    object-fit: contain;
+    object-position: center;
+
+    /* Ciernobiely efekt */
+    filter: grayscale(100%);
+
+    transition: filter 0.4s ease;
+}
+
+
+/* Farebna fotografia po prejdeni mysou */
+
+.equipment-page .equipment-item:hover .equipment-photo img {
+    filter: grayscale(0%);
+}
+
+
+/* ==========================================
+   7. TEXTOVA CAST ZARIADENIA
+   ========================================== */
+
+.equipment-page .equipment-item-info {
+    display: block;
+
+    width: 100%;
+    min-width: 0;
+
+    padding: 3px 0 0;
+    margin: 0;
+}
+
+
+/* Nazov robota */
+
+.equipment-page .equipment-item-info h4 {
+    margin: 0 0 8px;
+    padding: 0;
+
+    font-size: 20px;
+    font-weight: 650;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+
+    color: var(--ink, #19332b);
+
+    overflow-wrap: normal;
+    word-break: normal;
+    white-space: normal;
+}
+
+
+/* Typ zariadenia */
+
+.equipment-page .equipment-kind {
+    margin: 0 0 12px;
+    padding: 0;
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+
+    color: #50745d;
+}
+
+
+/* Strucny opis */
+
+.equipment-page .equipment-description {
+    margin: 0;
+    padding: 0;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.65;
+
+    color: #56675d;
+
+    overflow-wrap: normal;
+    word-break: normal;
+    white-space: normal;
+}
+
+
+/* ==========================================
+   8. PRAZDNE KATEGORIE
+   ========================================== */
+
+.equipment-page .equipment-placeholder {
+    grid-column: 1 / -1;
+
+    margin: 0;
+    padding: 0;
+
+    font-size: 14px;
+    line-height: 1.6;
+
+    color: #65746b;
+}
+
+
+/* ==========================================
+   9. MENSIE DESKTOPOVE OBRAZOVKY
+   ========================================== */
+
+@media (max-width: 1150px) {
+
+    .equipment-page .equipment-items {
+        grid-template-columns: 1fr;
+        column-gap: 0;
+        row-gap: 35px;
+    }
+
+    .equipment-page .equipment-item {
+        grid-template-columns: 135px minmax(0, 1fr);
+        gap: 20px;
+    }
+
+}
+
+
+/* ==========================================
+   10. TABLET
+   ========================================== */
+
+@media (max-width: 850px) {
+
+    .equipment-page {
+        padding: 55px 0 85px;
+    }
+
+    .equipment-main-title {
+        margin-bottom: 38px;
+    }
+
+    .equipment-group {
+        margin-bottom: 48px;
+    }
+
+    .equipment-page .equipment-photo {
+        width: 125px;
+        height: 135px;
+    }
+
+    .equipment-page .equipment-item {
+        grid-template-columns: 125px minmax(0, 1fr);
+        gap: 20px;
+    }
+
+}
+
+
+/* ==========================================
+   11. MOBIL
+   ========================================== */
+
+@media (max-width: 600px) {
+
+    .equipment-page {
+        padding: 45px 0 70px;
+    }
+
+    .equipment-main-title {
+        margin-bottom: 32px;
+        font-size: 26px;
+    }
+
+    .equipment-group {
+        margin-bottom: 42px;
+    }
+
+    .equipment-group-title {
+        font-size: 21px;
+        margin-bottom: 24px;
+    }
+
+    .equipment-page .equipment-items {
+        grid-template-columns: 1fr;
+        row-gap: 30px;
+    }
+
+    .equipment-page .equipment-item {
+        grid-template-columns: 100px minmax(0, 1fr);
+        gap: 15px;
+    }
+
+    .equipment-page .equipment-photo {
+        width: 100px;
+        height: 115px;
+    }
+
+    .equipment-page .equipment-item-info h4 {
+        font-size: 18px;
+    }
+
+    .equipment-page .equipment-kind {
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+
+    .equipment-page .equipment-description {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+}
+
+
+/* ==========================================
+   12. OBMEDZENIE ANIMACII
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .equipment-page .equipment-photo img {
+        transition: none;
+    }
+
+}
+/* Vertikalne zarovnanie fotografie a textu */
+.equipment-page .equipment-item {
+    align-items: center;
+}
+
+/* Text ako jeden suvisly blok */
+.equipment-page .equipment-item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 0;
+    padding: 0;
+    gap: 10px;
+}
+
+.equipment-page .equipment-item-info h4,
+.equipment-page .equipment-kind,
+.equipment-page .equipment-description {
+    margin: 0;
+}
+

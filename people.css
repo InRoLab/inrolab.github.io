@@ -1,0 +1,161 @@
+
+/* ==========================================
+   PEOPLE PAGE - INTERACTION ROBOTICS LAB
+   ========================================== */
+
+.people-page {
+    background: var(--paper, #f7f8f4);
+    padding: 70px 0 110px;
+}
+
+/* Akademicka kategoria */
+.people-group {
+    margin-bottom: 70px;
+}
+
+.people-group:last-child {
+    margin-bottom: 0;
+}
+
+.people-group-title {
+    font-size: clamp(24px, 2.5vw, 34px);
+    font-weight: 650;
+    color: var(--ink, #19332b);
+    margin: 0 0 36px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(25, 51, 43, 0.18);
+    letter-spacing: -0.025em;
+}
+
+/* DVA STLPCE */
+.people-members {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 55px;
+    row-gap: 42px;
+    align-items: start;
+}
+
+/* Profil jedneho clena */
+.people-member {
+    display: flex;
+    align-items: flex-start;
+    gap: 22px;
+    min-width: 0;
+}
+
+/* Fotografia */
+.people-portrait {
+    width: 120px;
+    height: 145px;
+    flex: 0 0 120px;
+    background: #e5eae5;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.people-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+}
+
+.people-portrait img[hidden] {
+    display: none;
+}
+
+.people-initials {
+    font-size: 36px;
+    font-weight: 600;
+    color: #647a6c;
+}
+
+.people-initials[hidden] {
+    display: none;
+}
+
+/* Textove informacie */
+.people-member-info {
+    flex: 1;
+    min-width: 0;
+    padding-top: 3px;
+}
+
+.people-member-info h3 {
+    margin: 0 0 8px;
+    font-size: 21px;
+    font-weight: 650;
+    line-height: 1.25;
+    color: var(--ink, #19332b);
+}
+
+.people-role {
+    margin: 0 0 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #50745d;
+}
+
+.people-research {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #56675d;
+    margin: 0;
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+    .people-members {
+        column-gap: 25px;
+    }
+
+    .people-portrait {
+        width: 95px;
+        height: 120px;
+        flex-basis: 95px;
+    }
+
+    .people-member {
+        gap: 15px;
+    }
+}
+
+/* Mobil - jeden stlpec */
+@media (max-width: 700px) {
+    .people-page {
+        padding: 45px 0 70px;
+    }
+
+    .people-members {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .people-group {
+        margin-bottom: 50px;
+    }
+
+    .people-group-title {
+        font-size: 25px;
+        margin-bottom: 25px;
+    }
+
+    .people-portrait {
+        width: 105px;
+        height: 130px;
+        flex-basis: 105px;
+    }
+
+    .people-member-info h3 {
+        font-size: 19px;
+    }
+}
+
+/* Ciernobiele fotografie clenov */
+.people-portrait img {
+    filter: grayscale(100%);
+}
