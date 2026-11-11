@@ -462,3 +462,52 @@
     }
 
 }
+
+/* Dve loga pod sebou */
+
+.contact-details-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 35px;
+}
+
+/* Klikatelne logo fakulty */
+
+.faculty-link {
+    display: block;
+    width: 100%;
+    max-width: 560px;
+}
+
+.contact-details-logo .faculty-link img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 260px;
+    max-height: none;
+    object-fit: contain;
+
+    transition: opacity 0.3s ease;
+}
+
+.faculty-link:hover img {
+    opacity: 0.7;
+}
+/* Velkost loga fakulty */
+
+.contact-details-logo .faculty-link {
+    display: block;
+    width: 100%;
+    max-width: 350px;
+}
+
+.contact-details-logo .faculty-link img {
+    display: block;
+    width: 100%;
+    max-width: none;
+    max-height: none;
+    height: auto;
+}
